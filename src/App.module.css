@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  width: 84vw;
+  font-family: var(--poppins-font);
+}
+header {
+  margin: 30px 0px;
+  color: var(--logo-color);
+  text-align: left;
+  font-size: 24px;
+  font-weight: 300;
+}
+header span {
+  font-weight: bold;
+}

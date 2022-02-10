@@ -1,0 +1,61 @@
+.FilterWrapper {
+  /* background-color: rgb(230, 242, 243); */
+  width: 30%;
+}
+.FulltimeWrapper {
+  display: flex;
+  align-items: center;
+  color: var(--primary-text-color);
+  font-size: 14px;
+  font-weight: 500;
+}
+.FilterWrapper label {
+  display: flex;
+  align-items: center;
+}
+.FulltimeWrapper input {
+  border-radius: 2px;
+  height: 16px;
+  width: 16px;
+  border: 1px solid #b9bdcf;
+  margin-right: 10px;
+}
+.Location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--placeholder-text);
+  margin-top: 30px;
+}
+.Location label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.LocationInputWrapper {
+  height: 48px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px 0px #0000000d;
+  margin-bottom: 25px;
+}
+.LocationInputWrapper input {
+  border: none;
+  width: fit-content;
+  min-width: 60%;
+  font-family: var(--roboto-font);
+  font-weight: 400;
+  font-size: 12px;
+  outline: unset;
+}
+.GlobeIcon {
+  margin-left: 14px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+.Cities span {
+  margin-left: 12px;
+}
