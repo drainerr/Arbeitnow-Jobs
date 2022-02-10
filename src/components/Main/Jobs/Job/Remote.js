@@ -1,6 +1,6 @@
 import styles from './Job.module.css';
-const Fulltime = () => {
+const Remote = () => {
   return <div className={styles.Remote}>Remote</div>;
 };
 
-export default Fulltime;
+export default Remote;

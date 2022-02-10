@@ -31,8 +31,7 @@ const JobsContext = (props) => {
         chosenCity,
         enteredCity,
         setEnteredCity,
-      }}
-    >
+      }}>
       {props.children}
     </JobsCtx.Provider>
   );

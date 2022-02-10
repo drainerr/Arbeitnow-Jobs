@@ -1,8 +1,8 @@
+import React from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import styles from './App.module.css';
 import Main from './components/Main/Main';
 import Search from './components/Search/Search';
-import { Redirect, Route, Switch } from 'react-router-dom';
-import React from 'react';
 import DetailedInfo from './components/Main/Jobs/Job-Page/JobPage';
 
 function App() {
