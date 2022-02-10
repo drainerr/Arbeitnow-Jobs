@@ -43,8 +43,9 @@ const Search = () => {
           <input
             type="text"
             value={inputValue}
-            placeholder="Title, company or expertise"
-            onChange={onChangeHandler}></input>
+            placeholder="Title, company"
+            onChange={onChangeHandler}
+          ></input>
         </div>
         <Button className={styles.SearchButton} onClick={onClickHandler}>
           Search

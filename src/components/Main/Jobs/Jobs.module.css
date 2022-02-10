@@ -48,3 +48,9 @@
 .PaginationBreak {
   border: none !important;
 }
+
+@media only screen and (max-width: 610px) {
+  .Jobs {
+    width: 100%;
+  }
+}

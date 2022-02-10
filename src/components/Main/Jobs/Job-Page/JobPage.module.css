@@ -108,3 +108,21 @@ strong {
   color: white;
   font-family: var(--roboto-font);
 }
+
+@media only screen and (max-width: 768px) {
+  .Container {
+    flex-direction: column;
+  }
+  .LeftPanel {
+    width: 100%;
+  }
+  .AboutJob {
+    margin-left: unset !important;
+    margin-top: 36px;
+  }
+}
+@media only screen and (max-width: 610px) {
+  .ApplyButton {
+    align-self: flex-end;
+  }
+}

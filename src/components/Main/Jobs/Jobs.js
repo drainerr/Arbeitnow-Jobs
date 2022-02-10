@@ -6,27 +6,37 @@ import ReactPaginate from 'react-paginate';
 
 const Jobs = (props) => {
   const { jobs, loading } = useContext(JobsCtx);
-  const [currPage, setCurrPage] = useState(1);
+  const [currPage, setCurrPage] = useState(0);
   let output;
 
   const jobsPerPage = 5;
   const pageCount = Math.ceil(jobs.length / 5);
   const jobsSeen = currPage * jobsPerPage;
 
-  const jobsToDisplay = jobs.slice(jobsSeen, jobsSeen + jobsPerPage).map((job, i) => {
-    return (
-      <Job
-        key={i}
-        id={i}
-        company={job.company_name}
-        position={job.title}
-        remote={job.remote}
-        url={job.url}
-        city={job.location}
-        date={job.created_at}
-      ></Job>
-    );
-  });
+  const mapJobs = (arr) => {
+    return arr.map((job, i) => {
+      return (
+        <Job
+          key={i}
+          id={i}
+          company={job.company_name}
+          position={job.title}
+          remote={job.remote}
+          url={job.url}
+          city={job.location}
+          date={job.created_at}
+        ></Job>
+      );
+    });
+  };
+
+  let jobsToDisplay;
+  if (window.screen.width > 480) {
+    const elements = jobs.slice(jobsSeen, jobsSeen + jobsPerPage);
+    jobsToDisplay = mapJobs(elements);
+  } else {
+    jobsToDisplay = mapJobs(jobs);
+  }
 
   const onPageChangeHandler = ({ selected }) => {
     setCurrPage(selected);
@@ -38,17 +48,19 @@ const Jobs = (props) => {
     output = (
       <>
         <ul className={styles.Jobs}>{jobsToDisplay}</ul>
-        <ReactPaginate
-          containerClassName={styles.PaginationContainer}
-          onPageChange={onPageChangeHandler}
-          pageCount={pageCount}
-          previousLinkClassName={styles.PreviousLink}
-          nextLinkClassName={styles.NextLink}
-          activeClassName={styles.PaginationActive}
-          breakClassName={styles.PaginationBreak}
-          nextLabel=">"
-          previousLabel="<"
-        />
+        {window.screen.width > 480 && (
+          <ReactPaginate
+            containerClassName={styles.PaginationContainer}
+            onPageChange={onPageChangeHandler}
+            pageCount={pageCount}
+            previousLinkClassName={styles.PreviousLink}
+            nextLinkClassName={styles.NextLink}
+            activeClassName={styles.PaginationActive}
+            breakClassName={styles.PaginationBreak}
+            nextLabel=">"
+            previousLabel="<"
+          />
+        )}
       </>
     );
   }

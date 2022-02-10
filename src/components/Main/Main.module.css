@@ -2,3 +2,9 @@
   display: flex;
   margin-top: 42px;
 }
+@media only screen and (max-width: 610px) {
+  .MainWrapper {
+    margin-top: 28px;
+    flex-direction: column;
+  }
+}

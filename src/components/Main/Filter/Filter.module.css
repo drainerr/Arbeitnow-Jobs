@@ -59,3 +59,9 @@
 .Cities span {
   margin-left: 12px;
 }
+
+@media only screen and (max-width: 610px) {
+  .FilterWrapper {
+    width: 100%;
+  }
+}
