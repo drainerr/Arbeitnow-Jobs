@@ -12,6 +12,7 @@ const Jobs = (props) => {
   const jobsPerPage = 5;
   const pageCount = Math.ceil(jobs.length / 5);
   const jobsSeen = currPage * jobsPerPage;
+
   const jobsToDisplay = jobs.slice(jobsSeen, jobsSeen + jobsPerPage).map((job, i) => {
     return (
       <Job
@@ -22,50 +23,37 @@ const Jobs = (props) => {
         remote={job.remote}
         url={job.url}
         city={job.location}
-        date={job.created_at}></Job>
+        date={job.created_at}
+      ></Job>
     );
   });
-
-  if (loading) output = <div>Loading...</div>;
-  if (!loading && jobs.length === 0) output = <div>Jobs not found!</div>;
-
-  if (!loading && jobs.length !== 0) {
-    // output = jobs.map((job, i) => {
-    //   return (
-    //     <Job
-    //       key={i}
-    //       id={i}
-    //       company={job.company_name}
-    //       position={job.title}
-    //       remote={job.remote}
-    //       url={job.url}
-    //       city={job.location}
-    //       date={job.created_at}></Job>
-    //   );
-    // });
-    output = jobsToDisplay;
-  }
 
   const onPageChangeHandler = ({ selected }) => {
     setCurrPage(selected);
   };
 
-  return (
-    <div className={styles.JobsWrapper}>
-      <ul className={styles.Jobs}>{output}</ul>
-      <ReactPaginate
-        containerClassName={styles.PaginationContainer}
-        onPageChange={onPageChangeHandler}
-        pageCount={pageCount}
-        previousLinkClassName={styles.PreviousLink}
-        nextLinkClassName={styles.NextLink}
-        activeClassName={styles.PaginationActive}
-        breakClassName={styles.PaginationBreak}
-        nextLabel=">"
-        previousLabel="<"
-      />
-    </div>
-  );
+  if (loading) output = <h3>Loading...</h3>;
+  if (!loading && jobs.length === 0) output = <h3>Jobs not found!</h3>;
+  if (!loading && jobs.length !== 0) {
+    output = (
+      <>
+        <ul className={styles.Jobs}>{jobsToDisplay}</ul>
+        <ReactPaginate
+          containerClassName={styles.PaginationContainer}
+          onPageChange={onPageChangeHandler}
+          pageCount={pageCount}
+          previousLinkClassName={styles.PreviousLink}
+          nextLinkClassName={styles.NextLink}
+          activeClassName={styles.PaginationActive}
+          breakClassName={styles.PaginationBreak}
+          nextLabel=">"
+          previousLabel="<"
+        />
+      </>
+    );
+  }
+
+  return <div className={styles.JobsWrapper}>{output} </div>;
 };
 
 export default Jobs;
