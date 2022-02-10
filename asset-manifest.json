@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Arbeitnow-Jobs/static/css/main.35882a7b.css",
-    "main.js": "/Arbeitnow-Jobs/static/js/main.ae82cbbb.js",
+    "main.js": "/Arbeitnow-Jobs/static/js/main.cce31017.js",
     "static/media/backgroundImg.png": "/Arbeitnow-Jobs/static/media/backgroundImg.c84275682c4b641c6db4.png",
     "index.html": "/Arbeitnow-Jobs/index.html",
     "main.35882a7b.css.map": "/Arbeitnow-Jobs/static/css/main.35882a7b.css.map",
-    "main.ae82cbbb.js.map": "/Arbeitnow-Jobs/static/js/main.ae82cbbb.js.map"
+    "main.cce31017.js.map": "/Arbeitnow-Jobs/static/js/main.cce31017.js.map"
   },
   "entrypoints": [
     "static/css/main.35882a7b.css",
-    "static/js/main.ae82cbbb.js"
+    "static/js/main.cce31017.js"
   ]
 }
