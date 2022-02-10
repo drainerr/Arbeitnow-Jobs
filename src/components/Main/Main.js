@@ -6,7 +6,7 @@ const Main = (props) => {
   return (
     <div className={styles.MainWrapper}>
       <Filter></Filter>
-      <Jobs jobs={props.jobs}></Jobs>
+      <Jobs></Jobs>
     </div>
   );
 };
