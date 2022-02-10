@@ -14,11 +14,11 @@ const Jobs = (props) => {
   const jobsSeen = currPage * jobsPerPage;
 
   const mapJobs = (arr) => {
-    return arr.map((job, i) => {
+    return arr.map((job) => {
       return (
         <Job
-          key={i}
-          id={i}
+          key={job.id}
+          id={job.id}
           company={job.company_name}
           position={job.title}
           remote={job.remote}

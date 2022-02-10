@@ -13,11 +13,24 @@ const JobsContext = (props) => {
   useEffect(() => {
     setLoading(true);
     axios('https://www.arbeitnow.com/api/job-board-api').then((data) => {
-      setJobs([...data.data.data]);
+      const specificJobsData = data.data.data.map((job, i) => {
+        return {
+          id: i,
+          company_name: job.company_name,
+          created_at: job.created_at,
+          description: job.description,
+          location: job.location,
+          remote: job.remote,
+          title: job.title,
+          url: job.url,
+        };
+      });
+      setJobs(specificJobsData);
       setLoading(false);
-      setUnfilteredJobList([...data.data.data]);
+      setUnfilteredJobList(specificJobsData);
     });
   }, []);
+
   return (
     <JobsCtx.Provider
       value={{
@@ -31,7 +44,8 @@ const JobsContext = (props) => {
         chosenCity,
         enteredCity,
         setEnteredCity,
-      }}>
+      }}
+    >
       {props.children}
     </JobsCtx.Provider>
   );
