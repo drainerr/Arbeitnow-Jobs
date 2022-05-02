@@ -18,7 +18,7 @@ const Job = (props) => {
           {remote ? <Remote /> : <div></div>}
           <div className={styles.LocationDateWrapper}>
             <Location Value={city} />
-            <PublishDate date={date} />
+            {/* <PublishDate date={date} /> */}
           </div>
         </div>
       </div>

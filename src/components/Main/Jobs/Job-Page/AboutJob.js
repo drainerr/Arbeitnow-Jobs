@@ -13,20 +13,14 @@ const AboutJob = () => {
   const id = jobId;
   const ctx = useContext(JobsCtx);
   !ctx.jobs[id] && window.alert('Please go back and reload the page');
-  const {
-    title,
-    created_at: date,
-    company_name: company,
-    remote,
-    location,
-  } = ctx.jobs[id];
+  const { title, created_at: date, company_name: company, remote, location } = ctx.jobs[id];
   return (
     <div className={styles.AboutJob}>
       <div className={styles.JobHeader}>
         <h2 className={styles.JobTitle}>{title}</h2>
         <Remote remote={remote} />
       </div>
-      <PublishDate date={date} />
+      {/* <PublishDate date={date} /> */}
       <div className={styles.CompanyInfo}>
         <img src={testImg} alt="company" />
         <div className={styles.NameAndLocation}>

@@ -9,8 +9,8 @@ const Jobs = (props) => {
   const [currPage, setCurrPage] = useState(0);
   let output;
 
-  const jobsPerPage = 5;
-  const pageCount = Math.ceil(jobs.length / 5);
+  const jobsPerPage = 10;
+  const pageCount = Math.ceil(jobs.length / 10);
   const jobsSeen = currPage * jobsPerPage;
 
   const mapJobs = (arr) => {
