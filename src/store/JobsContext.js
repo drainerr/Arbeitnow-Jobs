@@ -1,13 +1,13 @@
-import { createContext, useEffect, useState } from 'react';
-import useFetch from '../hooks/useFetch';
+import { createContext, useState } from "react";
+import useFetch from "../hooks/useFetch";
 
 export const JobsCtx = createContext();
 
 const JobsContext = (props) => {
   const [remote, setRemote] = useState(false);
-  const [chosenCity, setChosenCity] = useState('');
-  const [enteredCity, setEnteredCity] = useState('');
-  const [jobs, setJobs, loading, unfilteredJobList, setUnfilteredJobList] = useFetch();
+  const [chosenCity, setChosenCity] = useState("");
+  const [enteredCity, setEnteredCity] = useState("");
+  const [jobs, setJobs, loading, unfilteredJobList] = useFetch();
   useFetch();
 
   return (
